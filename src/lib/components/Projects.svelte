@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { _ } from 'svelte-i18n';
-  
+  import { _, json } from 'svelte-i18n';
+   
   let section: HTMLElement;
   let visible = $state(false);
   
@@ -25,7 +25,7 @@
             <div class="project-title">{$_('projects.dashboard.title')}</div>
             <div class="project-desc">{$_('projects.dashboard.desc')}</div>
             <div class="project-meta">
-              {#each $_('projects.dashboard.tags') as tag}
+              {#each $json('projects.dashboard.tags') as tag}
                 <span class="tag">{tag}</span>
               {/each}
               <button class="project-link">{$_('projects.view')}</button>
@@ -39,7 +39,7 @@
             <div class="project-title">{$_('projects.ecommerce.title')}</div>
             <div class="project-desc">{$_('projects.ecommerce.desc')}</div>
             <div class="project-meta">
-              {#each $_('projects.ecommerce.tags') as tag}
+              {#each $json('projects.ecommerce.tags') as tag}
                 <span class="tag">{tag}</span>
               {/each}
               <button class="project-link">{$_('projects.view')}</button>
@@ -53,7 +53,7 @@
             <div class="project-title">{$_('projects.design.title')}</div>
             <div class="project-desc">{$_('projects.design.desc')}</div>
             <div class="project-meta">
-              {#each $_('projects.design.tags') as tag}
+              {#each $json('projects.design.tags') as tag}
                 <span class="tag">{tag}</span>
               {/each}
               <button class="project-link">{$_('projects.view')}</button>

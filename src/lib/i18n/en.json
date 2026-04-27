@@ -19,7 +19,7 @@
   "about": {
     "label": "01 — About Me",
     "title": "Who am I",
-    "p1": "I'm <strong>Martin Farel</strong>, UI/UX Designer and Fullstack Developer focused on building interfaces that blend solid logic with intentional design.",
+    "p1": "I'm <strong>an entrepreneur</strong>, UI/UX Designer and Fullstack Developer focused on building interfaces that blend solid logic with intentional design.",
     "p2": "I specialize in end-to-end digital products — from research and wireframes to production deployment. I work with <strong>Svelte, React, Angular, Flutter, Kotlin and Dart</strong> as needed, <strong>NestJS/Node.js</strong> for backend, <strong>PostgreSQL</strong> for databases, and deploy on <strong>Heroku, Vercel and Firebase</strong>. For design I use <strong>Figma, Illustrator and After Effects</strong>.",
     "p3": "I believe the best software is invisible: it works so well the user never notices it.",
     "experience": "8+",
