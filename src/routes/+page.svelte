@@ -47,15 +47,15 @@
   
   <div class="divider"></div>
   
-  <Stack />
-  
-  <div class="divider"></div>
-  
   <Projects />
   
   <div class="divider"></div>
   
   <Experience />
+  
+  <div class="divider"></div>
+  
+  <Stack />
   
   <div class="divider"></div>
   

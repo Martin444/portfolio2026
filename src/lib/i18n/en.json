@@ -28,7 +28,7 @@
     "completionLabel": "Completion rate"
   },
   "stack": {
-    "label": "02 — Technologies",
+    "label": "04 — Technologies",
     "title": "My<br>stack",
     "categories": {
       "frontend": "Web Frontend",
@@ -62,7 +62,7 @@
     }
   },
   "projects": {
-    "label": "03 — Work",
+    "label": "02 — Work",
     "title": "Featured<br>Projects",
     "dashboard": { "title": "Dashboard Analytics", "desc": "Real-time data visualization platform for business metrics. Integration with multiple sources, interactive charts and report exports.", "tags": ["SvelteKit", "Node.js", "PostgreSQL"] },
     "ecommerce": { "title": "E-Commerce Platform", "desc": "Complete online store with cart, payments, admin panel and inventory system. Responsive design focused on conversion and mobile UX.", "tags": ["Next.js", "Stripe", "MongoDB"] },
@@ -70,7 +70,7 @@
     "view": "View project"
   },
   "experience": {
-    "label": "04 — Trajectory",
+    "label": "03 — Trajectory",
     "title": "Experience",
     "jobs": {
       "openpass": { "date": "2023 — 2026", "role": "Software Developer", "company": "OpenPass", "desc": "Developed and implemented improvements across the company's platform vertical. Proposed clean solutions and scaled AI-driven processes, including automated documentation MCP with n8n, code review agents, and AI-based products." },

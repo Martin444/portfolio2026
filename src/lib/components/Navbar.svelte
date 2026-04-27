@@ -24,9 +24,9 @@
   </a>
   <ul class="nav-links">
     <li><a href="#about">{$_('nav.about')}</a></li>
-    <li><a href="#stack">{$_('nav.stack')}</a></li>
     <li><a href="#projects">{$_('nav.projects')}</a></li>
     <li><a href="#experience">{$_('nav.experience')}</a></li>
+    <li><a href="#stack">{$_('nav.stack')}</a></li>
     <li><a href="#contact">{$_('nav.contact')}</a></li>
   </ul>
   <div class="nav-actions">
