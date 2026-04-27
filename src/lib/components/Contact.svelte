@@ -10,9 +10,10 @@
   let email = $state('');
   let message = $state('');
 
-  // Fallbacks / configuration
-  const recipientEmail = 'martin@farel.dev';
-  const apiEndpoint = (import.meta.env.VITE_CONTACT_API_ENDPOINT as string) || '';
+   // Fallbacks / configuration
+   const recipientEmail = 'mfarelback@gmail.com';
+   const whatsappPhone = '543873413199'; // Argentina: 54 + número
+   const apiEndpoint = (import.meta.env.VITE_CONTACT_API_ENDPOINT as string) || '';
 
   // UI state
   let loading = false;
@@ -59,11 +60,10 @@
       return;
     }
 
-    // Fallback: open email client via mailto (no API)
-    const subject = encodeURIComponent('Nuevo mensaje desde portfolio');
-    const body = encodeURIComponent(`Nombre: ${name}\nEmail: ${email}\nMensaje: ${message}`);
-    window.location.href = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
-    // Reset fields after attempting mailto
+     // Fallback: open WhatsApp (temporary)
+    const text = encodeURIComponent(`Nuevo mensaje desde portfolio\n\nNombre: ${name}\nEmail: ${email}\nMensaje: ${message}`);
+    window.open(`https://wa.me/${whatsappPhone}?text=${text}`, '_blank');
+    // Reset fields after attempting WhatsApp
     loading = false;
     name = '';
     email = '';
@@ -96,15 +96,15 @@
       <div class="contact-info reveal reveal-delay-2" class:visible>
         <p>Got an idea? Let's talk.</p>
         <div class="contact-links">
-          <a href="mailto:martin@farel.dev" class="contact-link">
-            <span class="contact-link-badge">Email</span>martin@farel.dev
-          </a>
-          <a href="https://linkedin.com/in/martinfarel" class="contact-link" target="_blank">
-            <span class="contact-link-badge">LinkedIn</span>/in/martinfarel
-          </a>
-          <a href="https://github.com/martinfarel" class="contact-link" target="_blank">
-            <span class="contact-link-badge">GitHub</span>/martinfarel
-          </a>
+          <a href="mailto:mfarelback@gmail.com" class="contact-link">
+             <span class="contact-link-badge">Email</span>mfarelback@gmail.com
+           </a>
+           <a href="https://www.linkedin.com/in/martin-farel-603a1615b" class="contact-link" target="_blank">
+             <span class="contact-link-badge">LinkedIn</span>/in/martin-farel-603a1615b
+           </a>
+           <a href="https://github.com/Martin444" class="contact-link" target="_blank">
+             <span class="contact-link-badge">GitHub</span>/Martin444
+           </a>
           <a href="#" class="contact-link">
             <span class="contact-link-badge">CV</span>Download PDF
           </a>
