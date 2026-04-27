@@ -23,7 +23,7 @@
     sizeAttenuation: true
   });
   
-  let starsRef: THREE.Points;
+  let starsRef = $state<THREE.Points | undefined>(undefined);
   let time = 0;
   
   useTask((delta) => {

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { _ } from 'svelte-i18n';
   
   let section: HTMLElement;
   let visible = $state(false);
@@ -11,36 +12,56 @@
     if (section) obs.observe(section);
     return () => obs.disconnect();
   });
-  
-  const projects = [
-    { number: '01', title: 'Dashboard Analytics', desc: 'Real-time data visualization platform for business metrics. Integration with multiple sources, interactive charts and report exports.', tags: ['SvelteKit', 'Node.js', 'PostgreSQL'] },
-    { number: '02', title: 'E-Commerce Platform', desc: 'Complete online store with cart, payments, admin panel and inventory system. Responsive design focused on conversion and mobile UX.', tags: ['Next.js', 'Stripe', 'MongoDB'] },
-    { number: '03', title: 'Design System Library', desc: 'Design system with over 60 documented components, design tokens, usage guidelines and integrated Storybook.', tags: ['React', 'Figma', 'Storybook'] },
-  ];
 </script>
 
 <section id="projects" bind:this={section}>
   <div class="container">
-    <div class="section-label reveal" class:visible>03 — Work</div>
-    <h2 class="section-title reveal" class:visible>Featured<br>Projects</h2>
+    <div class="section-label reveal" class:visible>{@html $_('projects.label')}</div>
+    <h2 class="section-title reveal" class:visible>{@html $_('projects.title')}</h2>
     <div class="projects-grid">
-      {#each projects as project, i}
-        <div class="project-card reveal" class:visible={visible} style="transition-delay: {i * 0.12}s">
+        <div class="project-card reveal" class:visible={visible} style="transition-delay: 0.12s">
           <div class="project-info">
-            <div class="project-number">{project.number}</div>
-            <div class="project-title">{project.title}</div>
-            <div class="project-desc">{project.desc}</div>
+            <div class="project-number">01</div>
+            <div class="project-title">{$_('projects.dashboard.title')}</div>
+            <div class="project-desc">{$_('projects.dashboard.desc')}</div>
             <div class="project-meta">
-              {#each project.tags as tag}
+              {#each $_('projects.dashboard.tags') as tag}
                 <span class="tag">{tag}</span>
               {/each}
-              <a href="#" class="project-link">Ver proyecto</a>
+              <button class="project-link">{$_('projects.view')}</button>
             </div>
           </div>
           <div class="project-arrow">→</div>
         </div>
-      {/each}
-    </div>
+        <div class="project-card reveal" class:visible={visible} style="transition-delay: 0.24s">
+          <div class="project-info">
+            <div class="project-number">02</div>
+            <div class="project-title">{$_('projects.ecommerce.title')}</div>
+            <div class="project-desc">{$_('projects.ecommerce.desc')}</div>
+            <div class="project-meta">
+              {#each $_('projects.ecommerce.tags') as tag}
+                <span class="tag">{tag}</span>
+              {/each}
+              <button class="project-link">{$_('projects.view')}</button>
+            </div>
+          </div>
+          <div class="project-arrow">→</div>
+        </div>
+        <div class="project-card reveal" class:visible={visible} style="transition-delay: 0.36s">
+          <div class="project-info">
+            <div class="project-number">03</div>
+            <div class="project-title">{$_('projects.design.title')}</div>
+            <div class="project-desc">{$_('projects.design.desc')}</div>
+            <div class="project-meta">
+              {#each $_('projects.design.tags') as tag}
+                <span class="tag">{tag}</span>
+              {/each}
+              <button class="project-link">{$_('projects.view')}</button>
+            </div>
+          </div>
+          <div class="project-arrow">→</div>
+        </div>
+      </div>
   </div>
 </section>
 
@@ -60,7 +81,7 @@
   .project-title { font-size: 21px; font-weight: 500; color: var(--white); margin-bottom: 0.5rem; }
   .project-desc { font-size: 14px; color: var(--muted2); line-height: 1.7; max-width: 580px; }
   .project-meta { display: flex; align-items: center; gap: 1rem; margin-top: 1.25rem; flex-wrap: wrap; }
-  .project-link { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted2); text-decoration: none; border: 1px solid var(--border); padding: 0.4rem 1rem; border-radius: 3px; transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast); }
+  .project-link { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted2); text-decoration: none; border: 1px solid var(--border); padding: 0.4rem 1rem; border-radius: 3px; transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast); cursor: pointer; background: transparent; }
   .project-link:hover { color: var(--white); border-color: var(--border-hi); background: var(--accent-dim); }
   .project-arrow { font-size: 28px; color: var(--border); transition: color var(--transition-slow), transform var(--transition-slow); padding: 1rem; }
   .project-card:hover .project-arrow { color: var(--muted2); transform: translateX(4px); }

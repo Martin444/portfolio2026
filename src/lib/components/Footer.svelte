@@ -1,8 +1,12 @@
+<script lang="ts">
+  import { _ } from 'svelte-i18n';
+</script>
+
 <footer>
-  <p>© 2025 Martin Farel — Todos los derechos reservados</p>
+  <p>© 2025 Martin Farel — {$_('footer.rights')}</p>
   <div class="footer-status">
     <div class="status-dot"></div>
-    Disponible para nuevos proyectos
+    {$_('footer.available')}
   </div>
 </footer>
 

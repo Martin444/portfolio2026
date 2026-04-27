@@ -1,9 +1,10 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { _ } from 'svelte-i18n';
   
   let section: HTMLElement;
   let visible = $state(false);
-  
+    
   onMount(() => {
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) visible = true; });
@@ -11,28 +12,43 @@
     if (section) obs.observe(section);
     return () => obs.disconnect();
   });
-  
-  const jobs = [
-    { date: '2023 — Present', role: 'Lead Fullstack Developer and AI Implementation Specialist', company: 'Growth Hackers Club', desc: 'Direct collaboration with CEO and product team to prototype, design and deliver UI/UX experiences through a lean design process: research, design, testing, iteration and development.' },
-    { date: '2023 — Present', role: 'Flutter Developer', company: 'Fichap', desc: 'Led UI prototyping using the company\'s design system. Collaborated with product and development teams on core projects to improve product interfaces and experiences.' },
-    { date: '2022 — 2023', role: 'UI Developer', company: 'Catatek', desc: 'Mobile UI and web application design for Catatek\'s R&D department and key clients.' },
-    { date: '2018 — 2022', role: 'Graphic Designer', company: 'Freelance', desc: 'Graphic and web design for local businesses.' },
-  ];
 </script>
 
 <section id="experience" bind:this={section}>
   <div class="container">
-    <div class="section-label reveal" class:visible>04 — Trajectory</div>
-    <h2 class="section-title reveal" class:visible>Experience</h2>
+    <div class="section-label reveal" class:visible>{@html $_('experience.label')}</div>
+    <h2 class="section-title reveal" class:visible>{@html $_('experience.title')}</h2>
     <div class="timeline">
-      {#each jobs as job, i}
-        <div class="timeline-item reveal" class:visible={visible} style="transition-delay: {i * 0.12}s">
-          <div class="timeline-date">{job.date}</div>
-          <div class="timeline-role">{job.role}</div>
-          <div class="timeline-company">{job.company}</div>
-          <div class="timeline-desc">{job.desc}</div>
-        </div>
-      {/each}
+      <div class="timeline-item reveal" class:visible={visible} style="transition-delay: 0.12s">
+        <div class="timeline-date">{$_('experience.jobs.openpass.date')}</div>
+        <div class="timeline-role">{$_('experience.jobs.openpass.role')}</div>
+        <div class="timeline-company">{$_('experience.jobs.openpass.company')}</div>
+        <div class="timeline-desc">{$_('experience.jobs.openpass.desc')}</div>
+      </div>
+      <div class="timeline-item reveal" class:visible={visible} style="transition-delay: 0.24s">
+        <div class="timeline-date">{$_('experience.jobs.growth.date')}</div>
+        <div class="timeline-role">{$_('experience.jobs.growth.role')}</div>
+        <div class="timeline-company">{$_('experience.jobs.growth.company')}</div>
+        <div class="timeline-desc">{$_('experience.jobs.growth.desc')}</div>
+      </div>
+      <div class="timeline-item reveal" class:visible={visible} style="transition-delay: 0.36s">
+        <div class="timeline-date">{$_('experience.jobs.fichap.date')}</div>
+        <div class="timeline-role">{$_('experience.jobs.fichap.role')}</div>
+        <div class="timeline-company">{$_('experience.jobs.fichap.company')}</div>
+        <div class="timeline-desc">{$_('experience.jobs.fichap.desc')}</div>
+      </div>
+      <div class="timeline-item reveal" class:visible={visible} style="transition-delay: 0.48s">
+        <div class="timeline-date">{$_('experience.jobs.catek.date')}</div>
+        <div class="timeline-role">{$_('experience.jobs.catek.role')}</div>
+        <div class="timeline-company">{$_('experience.jobs.catek.company')}</div>
+        <div class="timeline-desc">{$_('experience.jobs.catek.desc')}</div>
+      </div>
+      <div class="timeline-item reveal" class:visible={visible} style="transition-delay: 0.6s">
+        <div class="timeline-date">{$_('experience.jobs.freelance.date')}</div>
+        <div class="timeline-role">{$_('experience.jobs.freelance.role')}</div>
+        <div class="timeline-company">{$_('experience.jobs.freelance.company')}</div>
+        <div class="timeline-desc">{$_('experience.jobs.freelance.desc')}</div>
+      </div>
     </div>
   </div>
 </section>

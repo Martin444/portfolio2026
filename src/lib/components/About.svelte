@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { _ } from 'svelte-i18n';
   
   let section: HTMLElement;
   let visible = $state(false);
@@ -17,16 +18,16 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-left">
-        <div class="section-label reveal" class:visible>01 — About Me</div>
-        <h2 class="section-title reveal" class:visible><span class="title Who">Who am I</span></h2>
+        <div class="section-label reveal" class:visible>{@html $_('about.label')}</div>
+        <h2 class="section-title reveal" class:visible><span class="who">{@html $_('about.title')}</span></h2>
         <div class="about-text reveal reveal-delay-1" class:visible>
-          <p>I'm <strong>Martin Farel</strong>, UI/UX Designer and Fullstack Developer focused on building interfaces that blend solid logic with intentional design.</p>
-          <p>I specialize in end-to-end digital products — from research and wireframes to production deployment. I work with <strong>Svelte, React, Angular, Flutter, Kotlin and Dart</strong> as needed, <strong>NestJS/Node.js</strong> for backend, <strong>PostgreSQL</strong> for databases, and deploy on <strong>Heroku, Vercel and Firebase</strong>. For design I use <strong>Figma, Illustrator and After Effects</strong>.</p>
-          <p>I believe the best software is invisible: it works so well the user never notices it.</p>
+          <p>{@html $_('about.p1')}</p>
+          <p>{@html $_('about.p2')}</p>
+          <p>{@html $_('about.p3')}</p>
         </div>
         <div class="about-stats reveal reveal-delay-2" class:visible>
-          <div class="stat-card"><span class="stat-number">8+</span><span class="stat-label">Years of experience</span></div>
-          <div class="stat-card"><span class="stat-number">High</span><span class="stat-label">Completion rate</span></div>
+          <div class="stat-card"><span class="stat-number">{$_('about.experience')}</span><span class="stat-label">{@html $_('about.experienceLabel')}</span></div>
+          <div class="stat-card"><span class="stat-number">{$_('about.completion')}</span><span class="stat-label">{@html $_('about.completionLabel')}</span></div>
         </div>
       </div>
       <div class="about-visual">

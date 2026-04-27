@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { _ } from 'svelte-i18n';
   
   let section: HTMLElement;
   let visible = $state(false);
@@ -11,97 +12,226 @@
     if (section) obs.observe(section);
     return () => obs.disconnect();
   });
-  
-  const categories = [
-    {
-      title: 'Web Frontend',
-      skills: [
-        { icon: '/assets/reactjs 1.png', name: 'React / Next.js', desc: 'Fast and accessible interfaces focused on performance.', tags: ['React', 'Next.js', 'TypeScript'] },
-        { icon: '/assets/svelte 1.png', name: 'Svelte', desc: 'Reactive web development with excellent performance.', tags: ['Svelte', 'SvelteKit', 'Stores'] },
-        { icon: '/assets/angular 1.png', name: 'Angular', desc: 'Enterprise framework for complex applications.', tags: ['Components', 'Services', 'RxJS'] },
-        { icon: '/assets/html5 1.png', name: 'HTML / CSS', desc: 'Semantic and styled markup.', tags: ['HTML5', 'CSS3', 'Responsive'] },
-      ]
-    },
-    {
-      title: 'Mobile',
-      skills: [
-        { icon: '/assets/flutter 1.png', name: 'Flutter', desc: 'Cross-platform apps for iOS and Android.', tags: ['Dart', 'Widgets', 'Material Design'] },
-        { icon: '/assets/dart 1.png', name: 'Dart', desc: 'Compiled language with null safety.', tags: ['Null Safety', 'Async / Await', 'Streams'] },
-        { icon: '/assets/kotlin 1.png', name: 'Kotlin', desc: 'Modern Android development.', tags: ['Coroutines', 'Jetpack Compose', 'MVVM'] },
-      ]
-    },
-    {
-      title: 'Backend / DB',
-      skills: [
-        { icon: '/assets/nodejs 1.png', name: 'Node.js / NestJS', desc: 'Robust APIs and scalable architectures.', tags: ['Node.js', 'NestJS', 'Express', 'REST APIs'] },
-        { icon: '/assets/postgres 1.png', name: 'PostgreSQL', desc: 'Schema design and optimized queries.', tags: ['PostgreSQL', 'Prisma', 'Redis'] },
-        { icon: '/assets/firebase 1.png', name: 'Firebase', desc: 'Auth, real-time database and hosting.', tags: ['Firestore', 'Auth', 'Cloud Functions'] },
-      ]
-    },
-    {
-      title: 'DevOps / Deploy',
-      skills: [
-        { icon: '/assets/docker 1.png', name: 'Docker', desc: 'Containers and infrastructure management.', tags: ['Docker', 'Containers', 'CI/CD'] },
-        { icon: '/assets/heroku 1.png', name: 'Heroku', desc: 'Fast application deployment.', tags: ['Heroku', 'Dynos', 'Pipelines'] },
-        { icon: '/assets/typescript 1.png', name: 'Vercel', desc: 'Deploy for modern frontends.', tags: ['Vercel', 'Edge Functions', 'SSR'] },
-      ]
-    },
-    {
-      title: 'Diseño',
-      skills: [
-        { icon: '/assets/figma 1.png', name: 'Figma', desc: 'From wireframes to interactive prototypes.', tags: ['Design Systems', 'Prototyping', 'Components'] },
-        { icon: '/assets/illustrator 1.png', name: 'Illustrator', desc: 'Vector graphics and branding.', tags: ['Vectors', 'Icons', 'Branding'] },
-        { icon: '/assets/after 1.png', name: 'After Effects', desc: 'Animations and motion graphics.', tags: ['Motion', 'Animations', 'Lottie'] },
-      ]
-    },
-  ];
-
-  const aiSkills = [
-        { icon: '/assets/typescript 1.png', name: 'AI in Process', desc: 'Using AI as assistant to accelerate development and code review.', tags: ['GitHub Copilot', 'ChatGPT', 'Refactoring'] },
-        { icon: '/assets/firebase 1.png', name: 'AI in Product', desc: 'Integrate AI models: NLP, chatbots and recommendations.', tags: ['OpenAI API', 'LangChain', 'Vector DB'] },
-  ];
 </script>
 
 <section id="stack" class="stack-section" bind:this={section}>
   <div class="container">
-    <div class="section-label reveal" class:visible>02 — Technologies</div>
-    <h2 class="section-title reveal" class:visible>Mi<br>stack</h2>
-
-    {#each categories as cat, catIdx}
-      <div class="category-group">
-        <h3 class="category-title">{cat.title}</h3>
-        <div class="skills-grid">
-          {#each cat.skills as skill, i}
-            <div class="skill-card reveal" class:visible={visible} style="transition-delay: {(catIdx * 0.1) + (i * 0.05)}s">
-              <div class="skill-icon"><img src={skill.icon} alt={skill.name} /></div>
-              <div class="skill-name">{skill.name}</div>
-              <div class="skill-desc">{skill.desc}</div>
-              <div class="skill-tags">
-                {#each skill.tags as tag}
-                  <span class="tag">{tag}</span>
-                {/each}
-              </div>
-            </div>
-          {/each}
+    <div class="section-label reveal" class:visible>{@html $_('stack.label')}</div>
+    <h2 class="section-title reveal" class:visible>{@html $_('stack.title')}</h2>
+    
+    <div class="category-group">
+      <h3 class="category-title">{$_('stack.categories.frontend')}</h3>
+      <div class="skills-grid">
+        <div class="skill-card reveal" class:visible={visible} style="transition-delay: 0.05s">
+          <div class="skill-icon"><img src="/assets/reactjs 1.png" alt="React" /></div>
+          <div class="skill-name">{$_('stack.skills.react.name')}</div>
+          <div class="skill-desc">{$_('stack.skills.react.desc')}</div>
+          <div class="skill-tags">
+            {#each $_('stack.skills.react.tags') as tag}
+              <span class="tag">{tag}</span>
+            {/each}
+          </div>
+        </div>
+        <div class="skill-card reveal" class:visible={visible} style="transition-delay: 0.1s">
+          <div class="skill-icon"><img src="/assets/svelte 1.png" alt="Svelte" /></div>
+          <div class="skill-name">{$_('stack.skills.svelte.name')}</div>
+          <div class="skill-desc">{$_('stack.skills.svelte.desc')}</div>
+          <div class="skill-tags">
+            {#each $_('stack.skills.svelte.tags') as tag}
+              <span class="tag">{tag}</span>
+            {/each}
+          </div>
+        </div>
+        <div class="skill-card reveal" class:visible={visible} style="transition-delay: 0.15s">
+          <div class="skill-icon"><img src="/assets/angular 1.png" alt="Angular" /></div>
+          <div class="skill-name">{$_('stack.skills.angular.name')}</div>
+          <div class="skill-desc">{$_('stack.skills.angular.desc')}</div>
+          <div class="skill-tags">
+            {#each $_('stack.skills.angular.tags') as tag}
+              <span class="tag">{tag}</span>
+            {/each}
+          </div>
+        </div>
+        <div class="skill-card reveal" class:visible={visible} style="transition-delay: 0.2s">
+          <div class="skill-icon"><img src="/assets/html5 1.png" alt="HTML/CSS" /></div>
+          <div class="skill-name">{$_('stack.skills.html.name')}</div>
+          <div class="skill-desc">{$_('stack.skills.html.desc')}</div>
+          <div class="skill-tags">
+            {#each $_('stack.skills.html.tags') as tag}
+              <span class="tag">{tag}</span>
+            {/each}
+          </div>
         </div>
       </div>
-    {/each}
+    </div>
+
+    <div class="category-group">
+      <h3 class="category-title">{$_('stack.categories.mobile')}</h3>
+      <div class="skills-grid">
+        <div class="skill-card reveal" class:visible={visible} style="transition-delay: 0.25s">
+          <div class="skill-icon"><img src="/assets/flutter 1.png" alt="Flutter" /></div>
+          <div class="skill-name">{$_('stack.skills.flutter.name')}</div>
+          <div class="skill-desc">{$_('stack.skills.flutter.desc')}</div>
+          <div class="skill-tags">
+            {#each $_('stack.skills.flutter.tags') as tag}
+              <span class="tag">{tag}</span>
+            {/each}
+          </div>
+        </div>
+        <div class="skill-card reveal" class:visible={visible} style="transition-delay: 0.3s">
+          <div class="skill-icon"><img src="/assets/dart 1.png" alt="Dart" /></div>
+          <div class="skill-name">{$_('stack.skills.dart.name')}</div>
+          <div class="skill-desc">{$_('stack.skills.dart.desc')}</div>
+          <div class="skill-tags">
+            {#each $_('stack.skills.dart.tags') as tag}
+              <span class="tag">{tag}</span>
+            {/each}
+          </div>
+        </div>
+        <div class="skill-card reveal" class:visible={visible} style="transition-delay: 0.35s">
+          <div class="skill-icon"><img src="/assets/kotlin 1.png" alt="Kotlin" /></div>
+          <div class="skill-name">{$_('stack.skills.kotlin.name')}</div>
+          <div class="skill-desc">{$_('stack.skills.kotlin.desc')}</div>
+          <div class="skill-tags">
+            {#each $_('stack.skills.kotlin.tags') as tag}
+              <span class="tag">{tag}</span>
+            {/each}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-group">
+      <h3 class="category-title">{$_('stack.categories.backend')}</h3>
+      <div class="skills-grid">
+        <div class="skill-card reveal" class:visible={visible} style="transition-delay: 0.4s">
+          <div class="skill-icon"><img src="/assets/nodejs 1.png" alt="Node.js" /></div>
+          <div class="skill-name">{$_('stack.skills.node.name')}</div>
+          <div class="skill-desc">{$_('stack.skills.node.desc')}</div>
+          <div class="skill-tags">
+            {#each $_('stack.skills.node.tags') as tag}
+              <span class="tag">{tag}</span>
+            {/each}
+          </div>
+        </div>
+        <div class="skill-card reveal" class:visible={visible} style="transition-delay: 0.45s">
+          <div class="skill-icon"><img src="/assets/postgres 1.png" alt="PostgreSQL" /></div>
+          <div class="skill-name">{$_('stack.skills.postgres.name')}</div>
+          <div class="skill-desc">{$_('stack.skills.postgres.desc')}</div>
+          <div class="skill-tags">
+            {#each $_('stack.skills.postgres.tags') as tag}
+              <span class="tag">{tag}</span>
+            {/each}
+          </div>
+        </div>
+        <div class="skill-card reveal" class:visible={visible} style="transition-delay: 0.5s">
+          <div class="skill-icon"><img src="/assets/firebase 1.png" alt="Firebase" /></div>
+          <div class="skill-name">{$_('stack.skills.firebase.name')}</div>
+          <div class="skill-desc">{$_('stack.skills.firebase.desc')}</div>
+          <div class="skill-tags">
+            {#each $_('stack.skills.firebase.tags') as tag}
+              <span class="tag">{tag}</span>
+            {/each}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-group">
+      <h3 class="category-title">{$_('stack.categories.devops')}</h3>
+      <div class="skills-grid">
+        <div class="skill-card reveal" class:visible={visible} style="transition-delay: 0.55s">
+          <div class="skill-icon"><img src="/assets/docker 1.png" alt="Docker" /></div>
+          <div class="skill-name">{$_('stack.skills.docker.name')}</div>
+          <div class="skill-desc">{$_('stack.skills.docker.desc')}</div>
+          <div class="skill-tags">
+            {#each $_('stack.skills.docker.tags') as tag}
+              <span class="tag">{tag}</span>
+            {/each}
+          </div>
+        </div>
+        <div class="skill-card reveal" class:visible={visible} style="transition-delay: 0.6s">
+          <div class="skill-icon"><img src="/assets/heroku 1.png" alt="Heroku" /></div>
+          <div class="skill-name">{$_('stack.skills.heroku.name')}</div>
+          <div class="skill-desc">{$_('stack.skills.heroku.desc')}</div>
+          <div class="skill-tags">
+            {#each $_('stack.skills.heroku.tags') as tag}
+              <span class="tag">{tag}</span>
+            {/each}
+          </div>
+        </div>
+        <div class="skill-card reveal" class:visible={visible} style="transition-delay: 0.65s">
+          <div class="skill-icon"><img src="/assets/typescript 1.png" alt="Vercel" /></div>
+          <div class="skill-name">{$_('stack.skills.vercel.name')}</div>
+          <div class="skill-desc">{$_('stack.skills.vercel.desc')}</div>
+          <div class="skill-tags">
+            {#each $_('stack.skills.vercel.tags') as tag}
+              <span class="tag">{tag}</span>
+            {/each}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-group">
+      <h3 class="category-title">{$_('stack.categories.design')}</h3>
+      <div class="skills-grid">
+        <div class="skill-card reveal" class:visible={visible} style="transition-delay: 0.7s">
+          <div class="skill-icon"><img src="/assets/figma 1.png" alt="Figma" /></div>
+          <div class="skill-name">{$_('stack.skills.figma.name')}</div>
+          <div class="skill-desc">{$_('stack.skills.figma.desc')}</div>
+          <div class="skill-tags">
+            {#each $_('stack.skills.figma.tags') as tag}
+              <span class="tag">{tag}</span>
+            {/each}
+          </div>
+        </div>
+        <div class="skill-card reveal" class:visible={visible} style="transition-delay: 0.75s">
+          <div class="skill-icon"><img src="/assets/illustrator 1.png" alt="Illustrator" /></div>
+          <div class="skill-name">{$_('stack.skills.illustrator.name')}</div>
+          <div class="skill-desc">{$_('stack.skills.illustrator.desc')}</div>
+          <div class="skill-tags">
+            {#each $_('stack.skills.illustrator.tags') as tag}
+              <span class="tag">{tag}</span>
+            {/each}
+          </div>
+        </div>
+        <div class="skill-card reveal" class:visible={visible} style="transition-delay: 0.8s">
+          <div class="skill-icon"><img src="/assets/after 1.png" alt="After Effects" /></div>
+          <div class="skill-name">{$_('stack.skills.after.name')}</div>
+          <div class="skill-desc">{$_('stack.skills.after.desc')}</div>
+          <div class="skill-tags">
+            {#each $_('stack.skills.after.tags') as tag}
+              <span class="tag">{tag}</span>
+            {/each}
+          </div>
+        </div>
+      </div>
+    </div>
     
     <div class="category-group ai-group">
-      <h3 class="category-title">Artificial Intelligence</h3>
+      <h3 class="category-title">{$_('stack.ai')}</h3>
       <div class="skills-grid ai-grid">
-        {#each aiSkills as skill, i}
-          <div class="skill-card ai-card reveal" class:visible={visible} style="transition-delay: {categories.length * 0.1 + (i * 0.05)}s">
-            <div class="skill-icon"><img src={skill.icon} alt={skill.name} /></div>
-            <div class="skill-name">{skill.name}</div>
-            <div class="skill-desc">{skill.desc}</div>
-            <div class="skill-tags">
-              {#each skill.tags as tag}
-                <span class="tag">{tag}</span>
-              {/each}
-            </div>
+        <div class="skill-card ai-card reveal" class:visible={visible} style="transition-delay: 0.85s">
+          <div class="skill-icon"><img src="/assets/typescript 1.png" alt="AI Process" /></div>
+          <div class="skill-name">{$_('stack.aiSkills.process.name')}</div>
+          <div class="skill-desc">{$_('stack.aiSkills.process.desc')}</div>
+          <div class="skill-tags">
+            {#each $_('stack.aiSkills.process.tags') as tag}
+              <span class="tag">{tag}</span>
+            {/each}
           </div>
-        {/each}
+        </div>
+        <div class="skill-card ai-card reveal" class:visible={visible} style="transition-delay: 0.9s">
+          <div class="skill-icon"><img src="/assets/firebase 1.png" alt="AI Product" /></div>
+          <div class="skill-name">{$_('stack.aiSkills.product.name')}</div>
+          <div class="skill-desc">{$_('stack.aiSkills.product.desc')}</div>
+          <div class="skill-tags">
+            {#each $_('stack.aiSkills.product.tags') as tag}
+              <span class="tag">{tag}</span>
+            {/each}
+          </div>
+        </div>
       </div>
     </div>
   </div>

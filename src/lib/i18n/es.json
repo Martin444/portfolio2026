@@ -1,0 +1,108 @@
+{
+  "nav": {
+    "about": "Sobre mí",
+    "stack": "Stack",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "contact": "Contacto",
+    "cta": "Hablemos →"
+  },
+  "hero": {
+    "tag": "Creando proyectos memorables",
+    "name": "MARTIN FAREL",
+    "role1": "UI/UX Designer",
+    "role2": "Fullstack Developer y Especialista en IA",
+    "projects": "Ver proyectos",
+    "contact": "Contactar",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "label": "01 — Sobre mí",
+    "title": "¿Quién soy?",
+    "p1": "Soy <strong>Martin Farel</strong>, UI/UX Designer y Fullstack Developer enfocado en construir interfaces que combinan lógica sólida con diseño intencional.",
+    "p2": "Me especializo en productos digitales de extremo a extremo — desde investigación y wireframes hasta despliegue en producción. Trabajo con <strong>Svelte, React, Angular, Flutter, Kotlin y Dart</strong> según sea necesario, <strong>NestJS/Node.js</strong> para backend, <strong>PostgreSQL</strong> para bases de datos, y despliegue en <strong>Heroku, Vercel y Firebase</strong>. Para diseño uso <strong>Figma, Illustrator y After Effects</strong>.",
+    "p3": "Creo que el mejor software es invisible: funciona tan bien que el usuario nunca lo nota.",
+    "experience": "8+",
+    "experienceLabel": "Años de experiencia",
+    "completion": "Alta",
+    "completionLabel": "Tasa de finalización"
+  },
+  "stack": {
+    "label": "02 — Tecnologías",
+    "title": "Mi<br>stack",
+    "categories": {
+      "frontend": "Frontend Web",
+      "mobile": "Móvil",
+      "backend": "Backend / DB",
+      "devops": "DevOps / Deploy",
+      "design": "Diseño"
+    },
+    "ai": "Inteligencia Artificial",
+    "skills": {
+      "react": { "name": "React / Next.js", "desc": "Interfaces rápidas y accesibles enfocadas en rendimiento.", "tags": ["React", "Next.js", "TypeScript"] },
+      "svelte": { "name": "Svelte", "desc": "Desarrollo web reactivo con excelente rendimiento.", "tags": ["Svelte", "SvelteKit", "Stores"] },
+      "angular": { "name": "Angular", "desc": "Framework empresarial para aplicaciones complejas.", "tags": ["Components", "Services", "RxJS"] },
+      "html": { "name": "HTML / CSS", "desc": "Marcado semántico y estilizado.", "tags": ["HTML5", "CSS3", "Responsive"] },
+      "flutter": { "name": "Flutter", "desc": "Apps multiplataforma para iOS y Android.", "tags": ["Dart", "Widgets", "Material Design"] },
+      "dart": { "name": "Dart", "desc": "Lenguaje compilado con null safety.", "tags": ["Null Safety", "Async / Await", "Streams"] },
+      "kotlin": { "name": "Kotlin", "desc": "Desarrollo moderno Android.", "tags": ["Coroutines", "Jetpack Compose", "MVVM"] },
+      "node": { "name": "Node.js / NestJS", "desc": "APIs robustas y arquitecturas escalables.", "tags": ["Node.js", "NestJS", "Express", "REST APIs"] },
+      "postgres": { "name": "PostgreSQL", "desc": "Diseño de esquemas y consultas optimizadas.", "tags": ["PostgreSQL", "Prisma", "Redis"] },
+      "firebase": { "name": "Firebase", "desc": "Auth, base de datos en tiempo real y hosting.", "tags": ["Firestore", "Auth", "Cloud Functions"] },
+      "docker": { "name": "Docker", "desc": "Contenedores y gestión de infraestructura.", "tags": ["Docker", "Contenedores", "CI/CD"] },
+      "heroku": { "name": "Heroku", "desc": "Despliegue rápido de aplicaciones.", "tags": ["Heroku", "Dynos", "Pipelines"] },
+      "vercel": { "name": "Vercel", "desc": "Despliegue para frontends modernos.", "tags": ["Vercel", "Edge Functions", "SSR"] },
+      "figma": { "name": "Figma", "desc": "Desde wireframes hasta prototipos interactivos.", "tags": ["Design Systems", "Prototyping", "Components"] },
+      "illustrator": { "name": "Illustrator", "desc": "Gráficos vectoriales y branding.", "tags": ["Vectors", "Icons", "Branding"] },
+      "after": { "name": "After Effects", "desc": "Animaciones y gráficos en movimiento.", "tags": ["Motion", "Animations", "Lottie"] }
+    },
+    "aiSkills": {
+      "process": { "name": "IA en Procesos", "desc": "Uso de IA como asistente para acelerar desarrollo y code review.", "tags": ["GitHub Copilot", "ChatGPT", "Refactoring"] },
+      "product": { "name": "IA en Producto", "desc": "Integración de modelos de IA: NLP, chatbots y recomendaciones.", "tags": ["OpenAI API", "LangChain", "Vector DB"] }
+    }
+  },
+  "projects": {
+    "label": "03 — Trabajos",
+    "title": "Proyectos<br>destacados",
+    "dashboard": { "title": "Dashboard Analytics", "desc": "Plataforma de visualización de datos en tiempo real para métricas de negocio. Integración con múltiples fuentes, gráficos interactivos y exportación de reportes.", "tags": ["SvelteKit", "Node.js", "PostgreSQL"] },
+    "ecommerce": { "title": "Plataforma E-Commerce", "desc": "Tienda online completa con carrito, pagos, panel de administración y sistema de inventario. Diseño responsive enfocado en conversión y UX móvil.", "tags": ["Next.js", "Stripe", "MongoDB"] },
+    "design": { "title": "Librería Design System", "desc": "Sistema de diseño con más de 60 componentes documentados, design tokens, guías de uso e integración con Storybook.", "tags": ["React", "Figma", "Storybook"] },
+    "view": "Ver proyecto"
+  },
+  "experience": {
+    "label": "04 — Trayectoria",
+    "title": "Experiencia",
+    "jobs": {
+      "openpass": { "date": "2023 — 2026", "role": "Software Developer", "company": "OpenPass", "desc": "Desarrollé e implementé mejoras en toda la vertical de la empresa. Propuse soluciones limpias y escalé procesos con IA: MCP de documentación con n8n, agentes de CodeReview y productos basados en IA." },
+      "growth": { "date": "2022 — 2023", "role": "Lead Fullstack Developer y Especialista en IA", "company": "Growth Hackers Club", "desc": "Colaboración directa con CEO y equipo de producto para prototipar, diseñar y entregar experiencias UI/UX mediante un proceso lean: investigación, diseño, testing, iteración y desarrollo." },
+      "fichap": { "date": "2021 — 2022", "role": "Flutter Developer", "company": "Fichap", "desc": "Lideré el prototipado UI usando el design system de la empresa. Colaboré con equipos de producto y desarrollo en proyectos core para mejorar interfaces y experiencias de producto." },
+      "catek": { "date": "2020 — 2021", "role": "UI Developer", "company": "Catek", "desc": "Diseño de UI móvil y aplicaciones web para el departamento de I+D de Catek y clientes clave." },
+      "freelance": { "date": "2018 — 2020", "role": "Diseñador Gráfico", "company": "Freelance", "desc": "Diseño gráfico y web para negocios locales." }
+    }
+  },
+  "contact": {
+    "label": "05 — Contacto",
+    "title": "Hablemos",
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "email": "Email",
+    "emailPlaceholder": "tu@email.com",
+    "message": "Mensaje",
+    "messagePlaceholder": "Contame sobre tu proyecto...",
+    "send": "Enviar Mensaje →",
+    "sending": "Enviando...",
+    "idea": "¿Tenés una idea? Hablemos.",
+    "emailLabel": "Email",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub",
+    "cvLabel": "CV",
+    "cvText": "Descargar PDF",
+    "success": "¡Gracias por tu mensaje! Lo recibí y te responderé pronto.",
+    "error": "El mensaje no pudo ser enviado. Por favor intentá de nuevo.",
+    "errorNetwork": "Error de red al enviar el mensaje."
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "available": "Disponible para nuevos proyectos"
+  }
+}

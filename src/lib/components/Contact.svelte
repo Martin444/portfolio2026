@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { _, getMessageFormatter } from 'svelte-i18n';
 
   // Element reference
   let section: HTMLElement;
@@ -11,14 +12,14 @@
   let message = $state('');
 
    // Fallbacks / configuration
-   const recipientEmail = 'mfarelback@gmail.com';
-   const whatsappPhone = '543873413199'; // Argentina: 54 + número
-   const apiEndpoint = (import.meta.env.VITE_CONTACT_API_ENDPOINT as string) || '';
-
+    const recipientEmail = 'mfarelback@gmail.com';
+    const whatsappPhone = '543873413199'; // Argentina: 54 + número
+    const apiEndpoint = (import.meta.env.VITE_CONTACT_API_ENDPOINT as string) || '';
+  
   // UI state
-  let loading = false;
-  let submitted = false;
-  let errorMsg = '';
+  let loading = $state(false);
+  let submitted = $state(false);
+  let errorMsg = $state('');
 
   onMount(() => {
     const obs = new IntersectionObserver(entries => {
@@ -45,10 +46,10 @@
         if (res.ok) {
           submitted = true;
         } else {
-          errorMsg = 'Message could not be sent. Please try again.';
+          errorMsg = 'Error sending message';
         }
       } catch (err) {
-          errorMsg = 'Network error while sending message.';
+          errorMsg = 'Network error';
       } finally {
         loading = false;
         if (submitted) {
@@ -73,44 +74,44 @@
 
 <section id="contact" class="contact-section" bind:this={section}>
   <div class="container">
-     <div class="section-label reveal" class:visible>05 — Contact</div>
-    <h2 class="section-title reveal" class:visible>Let's Talk</h2>
+      <div class="section-label reveal" class:visible>{@html $_('contact.label')}</div>
+    <h2 class="section-title reveal" class:visible>{@html $_('contact.title')}</h2>
     <div class="contact-inner">
       <form class="contact-form reveal reveal-delay-1" class:visible onsubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
         <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" bind:value={name} placeholder="Tu nombre">
+          <label for="name">{$_('contact.name')}</label>
+          <input type="text" id="name" bind:value={name} placeholder={$_('contact.namePlaceholder')}>
         </div>
         <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" bind:value={email} placeholder="tu@email.com">
+          <label for="email">{$_('contact.email')}</label>
+          <input type="email" id="email" bind:value={email} placeholder={$_('contact.emailPlaceholder')}>
         </div>
         <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" bind:value={message} placeholder="Tell me about your project..."></textarea>
+          <label for="message">{$_('contact.message')}</label>
+          <textarea id="message" bind:value={message} placeholder={$_('contact.messagePlaceholder')}></textarea>
         </div>
         <button type="submit" class="btn btn-primary" disabled={loading}>
-          {loading ? 'Sending...' : 'Send Message →'}
+          {loading ? $_('contact.sending') : $_('contact.send')}
         </button>
       </form>
       <div class="contact-info reveal reveal-delay-2" class:visible>
-        <p>Got an idea? Let's talk.</p>
+        <p>{$_('contact.idea')}</p>
         <div class="contact-links">
           <a href="mailto:mfarelback@gmail.com" class="contact-link">
-             <span class="contact-link-badge">Email</span>mfarelback@gmail.com
+             <span class="contact-link-badge">{$_('contact.emailLabel')}</span>mfarelback@gmail.com
            </a>
            <a href="https://www.linkedin.com/in/martin-farel-603a1615b" class="contact-link" target="_blank">
-             <span class="contact-link-badge">LinkedIn</span>/in/martin-farel-603a1615b
+             <span class="contact-link-badge">{$_('contact.linkedinLabel')}</span>/in/martin-farel-603a1615b
            </a>
            <a href="https://github.com/Martin444" class="contact-link" target="_blank">
-             <span class="contact-link-badge">GitHub</span>/Martin444
+             <span class="contact-link-badge">{$_('contact.githubLabel')}</span>/Martin444
            </a>
-          <a href="#" class="contact-link">
-            <span class="contact-link-badge">CV</span>Download PDF
+          <a href="/CV-Martin-Farel.pdf" download class="contact-link">
+            <span class="contact-link-badge">{$_('contact.cvLabel')}</span>{$_('contact.cvText')}
           </a>
-        </div>
+       </div>
         {#if submitted}
-          <p class="success" style="margin-top: 1rem; color: #4CAF50;">Thanks for your message! I've received it and will reply soon.</p>
+          <p class="success" style="margin-top: 1rem; color: #4CAF50;">{$_('contact.success')}</p>
         {:else if errorMsg}
           <p class="error" style="margin-top: 1rem; color: #f44336;">{errorMsg}</p>
         {/if}

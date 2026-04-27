@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { _ } from 'svelte-i18n';
   
   let loaded = $state(false);
   
@@ -11,16 +12,16 @@
 <section class="hero">
   <div class="hero-glow"></div>
   <div class="hero-content" class:loaded>
-    <div class="hero-tag">Creando proyectos memorables</div>
-    <h1 class="hero-name">MARTIN FAREL</h1>
-    <p class="hero-subtitle"><span>UI/UX Designer</span> - <span>Fullstack Developer and AI Implementation Specialist</span></p>
+    <div class="hero-tag">{$_('hero.tag')}</div>
+    <h1 class="hero-name">{$_('hero.name')}</h1>
+    <p class="hero-subtitle"><span>{$_('hero.role1')}</span> - <span>{$_('hero.role2')}</span></p>
     <div class="hero-cta">
-      <a href="#projects" class="btn btn-primary">Ver proyectos</a>
-      <a href="#contact" class="btn btn-ghost">Contactar</a>
+      <a href="#projects" class="btn btn-primary">{$_('hero.projects')}</a>
+      <a href="#contact" class="btn btn-ghost">{$_('hero.contact')}</a>
     </div>
   </div>
   <div class="hero-scroll">
-    <span>Scroll</span>
+    <span>{$_('hero.scroll')}</span>
     <div class="scroll-line"></div>
   </div>
 </section>

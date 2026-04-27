@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { _, locale } from 'svelte-i18n';
   
   let visible = $state(false);
   
@@ -7,24 +8,33 @@
     const handleScroll = () => {
       visible = window.scrollY > 50;
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  });
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    });
+  
+    function toggleLang() {
+      $locale = $locale === 'es' ? 'en' : 'es';
+    }
 </script>
 
-  <nav class:scrolled={visible}>
-    <a href="/" class="nav-logo">
-      <img src="/assets/perfilmartin.jpg" alt="Martin Farel" class="nav-avatar" />
-      <span class="nav-name"><span>/</span>Martin Farel</span>
-    </a>
+<nav class:scrolled={visible}>
+  <a href="/" class="nav-logo">
+    <img src="/assets/perfilmartin.jpg" alt="Martin Farel" class="nav-avatar" />
+    <span class="nav-name"><span>/</span>Martin Farel</span>
+  </a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#stack">Stack</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">{$_('nav.about')}</a></li>
+    <li><a href="#stack">{$_('nav.stack')}</a></li>
+    <li><a href="#projects">{$_('nav.projects')}</a></li>
+    <li><a href="#experience">{$_('nav.experience')}</a></li>
+    <li><a href="#contact">{$_('nav.contact')}</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Let's Talk →</a>
+  <div class="nav-actions">
+    <button class="lang-btn" onclick={toggleLang}>
+      {$locale === 'es' ? 'EN' : 'ES'}
+    </button>
+    <a href="#contact" class="nav-cta">{$_('nav.cta')}</a>
+  </div>
 </nav>
 
 <style>
@@ -58,9 +68,17 @@
     padding: 0.6rem 1.4rem; border-radius: 3px; transition: all 0.25s;
   }
   .nav-cta:hover { background: var(--accent-dim); }
+  .nav-actions { display: flex; align-items: center; gap: 1rem; }
+  .lang-btn {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted2); background: none; border: 1px solid var(--border); padding: 0.4rem 0.8rem;
+    border-radius: 3px; cursor: pointer; transition: all 0.25s;
+  }
+  .lang-btn:hover { color: var(--white); border-color: var(--border-hi); background: var(--accent-dim); }
   
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
+    .nav-actions { gap: 0.5rem; }
   }
 </style>
