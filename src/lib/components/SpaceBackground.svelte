@@ -7,7 +7,7 @@
 </script>
 
 <div class="space-background" bind:this={container}>
-  <Canvas size={{ width: 1920, height: 1080 }}>
+  <Canvas>
     <SpaceScene />
   </Canvas>
 </div>

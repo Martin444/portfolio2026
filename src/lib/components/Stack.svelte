@@ -1,9 +1,12 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { get } from 'svelte/store';
   import { _, json } from 'svelte-i18n';
-   
+    
   let section: HTMLElement;
   let visible = $state(false);
+  
+  const getJson = (id: string): any => get(json)(id);
   
   onMount(() => {
     const obs = new IntersectionObserver(entries => {
@@ -27,7 +30,7 @@
           <div class="skill-name">{$_('stack.skills.react.name')}</div>
           <div class="skill-desc">{$_('stack.skills.react.desc')}</div>
           <div class="skill-tags">
-             {#each $json('stack.skills.react.tags') as tag}
+             {#each getJson('stack.skills.react.tags') as tag}
               <span class="tag">{tag}</span>
             {/each}
           </div>
@@ -37,7 +40,7 @@
           <div class="skill-name">{$_('stack.skills.svelte.name')}</div>
           <div class="skill-desc">{$_('stack.skills.svelte.desc')}</div>
           <div class="skill-tags">
-             {#each $json('stack.skills.svelte.tags') as tag}
+             {#each getJson('stack.skills.svelte.tags') as tag}
               <span class="tag">{tag}</span>
             {/each}
           </div>
@@ -47,7 +50,7 @@
           <div class="skill-name">{$_('stack.skills.angular.name')}</div>
           <div class="skill-desc">{$_('stack.skills.angular.desc')}</div>
           <div class="skill-tags">
-             {#each $json('stack.skills.angular.tags') as tag}
+             {#each getJson('stack.skills.angular.tags') as tag}
               <span class="tag">{tag}</span>
             {/each}
           </div>
@@ -57,7 +60,7 @@
           <div class="skill-name">{$_('stack.skills.html.name')}</div>
           <div class="skill-desc">{$_('stack.skills.html.desc')}</div>
           <div class="skill-tags">
-             {#each $json('stack.skills.html.tags') as tag}
+             {#each getJson('stack.skills.html.tags') as tag}
               <span class="tag">{tag}</span>
             {/each}
           </div>
@@ -73,7 +76,7 @@
           <div class="skill-name">{$_('stack.skills.flutter.name')}</div>
           <div class="skill-desc">{$_('stack.skills.flutter.desc')}</div>
           <div class="skill-tags">
-            {#each $json('stack.skills.flutter.tags') as tag}
+            {#each getJson('stack.skills.flutter.tags') as tag}
               <span class="tag">{tag}</span>
             {/each}
           </div>
@@ -83,7 +86,7 @@
           <div class="skill-name">{$_('stack.skills.dart.name')}</div>
           <div class="skill-desc">{$_('stack.skills.dart.desc')}</div>
           <div class="skill-tags">
-            {#each $json('stack.skills.dart.tags') as tag}
+            {#each getJson('stack.skills.dart.tags') as tag}
               <span class="tag">{tag}</span>
             {/each}
           </div>
@@ -93,7 +96,7 @@
           <div class="skill-name">{$_('stack.skills.kotlin.name')}</div>
           <div class="skill-desc">{$_('stack.skills.kotlin.desc')}</div>
           <div class="skill-tags">
-            {#each $json('stack.skills.kotlin.tags') as tag}
+            {#each getJson('stack.skills.kotlin.tags') as tag}
               <span class="tag">{tag}</span>
             {/each}
           </div>
@@ -109,7 +112,7 @@
           <div class="skill-name">{$_('stack.skills.node.name')}</div>
           <div class="skill-desc">{$_('stack.skills.node.desc')}</div>
           <div class="skill-tags">
-            {#each $json('stack.skills.node.tags') as tag}
+            {#each getJson('stack.skills.node.tags') as tag}
               <span class="tag">{tag}</span>
             {/each}
           </div>
@@ -119,7 +122,7 @@
           <div class="skill-name">{$_('stack.skills.postgres.name')}</div>
           <div class="skill-desc">{$_('stack.skills.postgres.desc')}</div>
           <div class="skill-tags">
-            {#each $json('stack.skills.postgres.tags') as tag}
+            {#each getJson('stack.skills.postgres.tags') as tag}
               <span class="tag">{tag}</span>
             {/each}
           </div>
@@ -129,7 +132,7 @@
           <div class="skill-name">{$_('stack.skills.firebase.name')}</div>
           <div class="skill-desc">{$_('stack.skills.firebase.desc')}</div>
           <div class="skill-tags">
-            {#each $json('stack.skills.firebase.tags') as tag}
+            {#each getJson('stack.skills.firebase.tags') as tag}
               <span class="tag">{tag}</span>
             {/each}
           </div>
@@ -145,7 +148,7 @@
           <div class="skill-name">{$_('stack.skills.docker.name')}</div>
           <div class="skill-desc">{$_('stack.skills.docker.desc')}</div>
           <div class="skill-tags">
-            {#each $json('stack.skills.docker.tags') as tag}
+            {#each getJson('stack.skills.docker.tags') as tag}
               <span class="tag">{tag}</span>
             {/each}
           </div>
@@ -155,7 +158,7 @@
           <div class="skill-name">{$_('stack.skills.heroku.name')}</div>
           <div class="skill-desc">{$_('stack.skills.heroku.desc')}</div>
           <div class="skill-tags">
-            {#each $json('stack.skills.heroku.tags') as tag}
+            {#each getJson('stack.skills.heroku.tags') as tag}
               <span class="tag">{tag}</span>
             {/each}
           </div>
@@ -165,7 +168,7 @@
           <div class="skill-name">{$_('stack.skills.vercel.name')}</div>
           <div class="skill-desc">{$_('stack.skills.vercel.desc')}</div>
           <div class="skill-tags">
-            {#each $json('stack.skills.vercel.tags') as tag}
+            {#each getJson('stack.skills.vercel.tags') as tag}
               <span class="tag">{tag}</span>
             {/each}
           </div>
@@ -181,7 +184,7 @@
           <div class="skill-name">{$_('stack.skills.figma.name')}</div>
           <div class="skill-desc">{$_('stack.skills.figma.desc')}</div>
           <div class="skill-tags">
-            {#each $json('stack.skills.figma.tags') as tag}
+            {#each getJson('stack.skills.figma.tags') as tag}
               <span class="tag">{tag}</span>
             {/each}
           </div>
@@ -191,7 +194,7 @@
           <div class="skill-name">{$_('stack.skills.illustrator.name')}</div>
           <div class="skill-desc">{$_('stack.skills.illustrator.desc')}</div>
           <div class="skill-tags">
-            {#each $json('stack.skills.illustrator.tags') as tag}
+            {#each getJson('stack.skills.illustrator.tags') as tag}
               <span class="tag">{tag}</span>
             {/each}
           </div>
@@ -201,7 +204,7 @@
           <div class="skill-name">{$_('stack.skills.after.name')}</div>
           <div class="skill-desc">{$_('stack.skills.after.desc')}</div>
           <div class="skill-tags">
-            {#each $json('stack.skills.after.tags') as tag}
+            {#each getJson('stack.skills.after.tags') as tag}
               <span class="tag">{tag}</span>
             {/each}
           </div>
@@ -217,7 +220,7 @@
           <div class="skill-name">{$_('stack.aiSkills.process.name')}</div>
           <div class="skill-desc">{$_('stack.aiSkills.process.desc')}</div>
           <div class="skill-tags">
-            {#each $json('stack.aiSkills.process.tags') as tag}
+            {#each getJson('stack.aiSkills.process.tags') as tag}
               <span class="tag">{tag}</span>
             {/each}
           </div>
@@ -227,7 +230,7 @@
           <div class="skill-name">{$_('stack.aiSkills.product.name')}</div>
           <div class="skill-desc">{$_('stack.aiSkills.product.desc')}</div>
           <div class="skill-tags">
-            {#each $json('stack.aiSkills.product.tags') as tag}
+            {#each getJson('stack.aiSkills.product.tags') as tag}
               <span class="tag">{tag}</span>
             {/each}
           </div>
