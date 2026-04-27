@@ -11,19 +11,27 @@
 </script>
 
 <svelte:head>
-  <title>Martin Farel — UI/UX Designer & Fullstack Developer and AI Implementation Specialist</title>
-  <meta name="description" content="Portfolio de Martin Farel - UI/UX Designer y Fullstack Developer and AI Implementation Specialist especializado en experiencias digitales modernas." />
-  <!-- Open Graph / Facebook -->
+  <title>Martin Farel — UI/UX Designer & Fullstack Developer</title>
+  <meta name="description" content="Portfolio de Martin Farel - UI/UX Designer y Fullstack Developer especializado en experiencias digitales modernas con IA." />
+  
+  <!-- Open Graph / Facebook (WhatsApp usa estas etiquetas) -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Martin Farel — UI/UX Designer & Fullstack Developer and AI Implementation Specialist" />
-  <meta property="og:description" content="Portfolio de Martin Farel - UI/UX Designer y Fullstack Developer and AI Implementation Specialist especializado en experiencias digitales modernas." />
-  <meta property="og:image" content="https://martinfarel.dev/assets/perfilmartin.jpg" />
+  <meta property="og:title" content="Martin Farel — UI/UX Designer & Fullstack Developer" />
+  <meta property="og:description" content="Portfolio de Martin Farel - UI/UX Designer y Fullstack Developer especializado en experiencias digitales modernas con IA." />
+  <meta property="og:image" content="/assets/perfilmartin.jpg" />
+  <meta property="og:image:secure_url" content="/assets/perfilmartin.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://martinfarel.dev" />
+  <meta property="og:site_name" content="Martin Farel Portfolio" />
+  <meta property="og:locale" content="es_ES" />
+  
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Martin Farel — UI/UX Designer & Fullstack Developer and AI Implementation Specialist" />
-  <meta name="twitter:description" content="Portfolio de Martin Farel - UI/UX Designer y Fullstack Developer and AI Implementation Specialist especializado en experiencias digitales modernas." />
-  <meta name="twitter:image" content="https://martinfarel.dev/assets/perfilmartin.jpg" />
+  <meta name="twitter:title" content="Martin Farel — UI/UX Designer & Fullstack Developer" />
+  <meta name="twitter:description" content="Portfolio de Martin Farel - UI/UX Designer y Fullstack Developer especializado en experiencias digitales modernas con IA." />
+  <meta name="twitter:image" content="/assets/perfilmartin.jpg" />
+  <meta name="twitter:image:alt" content="Foto de perfil de Martin Farel" />
 </svelte:head>
 
 <SpaceBackground />
