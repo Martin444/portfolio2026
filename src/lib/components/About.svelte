@@ -19,7 +19,7 @@
     <div class="about-grid">
       <div class="about-left">
         <div class="section-label reveal" class:visible>{@html $_('about.label')}</div>
-        <h2 class="section-title reveal" class:visible><span class="who">{@html $_('about.title')}</span></h2>
+        <h2 class="section-title reveal" class:visible>{@html $_('about.title')}</h2>
         <div class="about-text reveal reveal-delay-1" class:visible>
           <p>{@html $_('about.p1')}</p>
           <p>{@html $_('about.p2')}</p>
