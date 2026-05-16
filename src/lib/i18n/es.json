@@ -14,7 +14,9 @@
     "role2": "Fullstack Developer y Especialista en IA",
     "projects": "Ver proyectos",
     "contact": "Contactar",
-    "scroll": "Scroll"
+    "scroll": "Scroll",
+    "downloadCV": "Descargar CV",
+    "downloading": "Generando..."
   },
   "about": {
     "label": "01 — Sobre mí",

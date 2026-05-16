@@ -14,7 +14,9 @@
     "role2": "Fullstack Developer and AI Implementation Specialist",
     "projects": "View projects",
     "contact": "Contact",
-    "scroll": "Scroll"
+    "scroll": "Scroll",
+    "downloadCV": "Download CV",
+    "downloading": "Generating..."
   },
   "about": {
     "label": "01 — About Me",

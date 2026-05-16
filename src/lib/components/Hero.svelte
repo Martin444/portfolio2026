@@ -1,12 +1,27 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { _ } from 'svelte-i18n';
-  
+  import { _, locale } from 'svelte-i18n';
+
   let loaded = $state(false);
-  
+  let isLoading = $state(false);
+
   onMount(() => {
     setTimeout(() => loaded = true, 100);
   });
+
+  async function handleDownload() {
+    if (isLoading) return;
+    isLoading = true;
+    try {
+      const { generatePDF } = await import('$lib/services/pdfGenerator');
+      const currentLocale = ($locale ?? 'es') as 'es' | 'en';
+      await generatePDF(currentLocale);
+    } catch (err) {
+      console.error('PDF generation failed:', err);
+    } finally {
+      isLoading = false;
+    }
+  }
 </script>
 
 <section class="hero">
@@ -17,6 +32,9 @@
     <p class="hero-subtitle"><span>{$_('hero.role1')}</span> - <span>{$_('hero.role2')}</span></p>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">{$_('hero.projects')}</a>
+      <button type="button" class="btn btn-ghost" onclick={handleDownload} disabled={isLoading}>
+        {isLoading ? $_('hero.downloading') : $_('hero.downloadCV')}
+      </button>
       <a href="#contact" class="btn btn-ghost">{$_('hero.contact')}</a>
     </div>
   </div>

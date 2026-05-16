@@ -25,6 +25,7 @@
 	"dependencies": {
 		"@threlte/core": "^8.5.9",
 		"@threlte/extras": "^9.14.9",
+		"pdfmake": "^0.3.8",
 		"svelte-i18n": "^4.0.1",
 		"three": "^0.184.0"
 	}
