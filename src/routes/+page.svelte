@@ -19,13 +19,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content={$locale === 'es' ? 'Martin Farel — UI/UX Designer y Fullstack Developer' : 'Martin Farel — UI/UX Designer & Fullstack Developer'} />
   <meta property="og:description" content={$locale === 'es' ? 'Portfolio de Martin Farel - UI/UX Designer y Fullstack Developer especializado en experiencias digitales modernas con IA.' : 'Portfolio of Martin Farel - UI/UX Designer and Fullstack Developer specialized in modern digital experiences with AI.'} />
-  <meta property="og:image" content="https://martinfarel.dev/assets/perfilmartin.jpg" />
-  <meta property="og:image:secure_url" content="https://martinfarel.dev/assets/perfilmartin.jpg" />
+  <meta property="og:image" content="https://martinprogramador.netlify.app/assets/perfilmartin.jpg" />
+  <meta property="og:image:secure_url" content="https://martinprogramador.netlify.app/assets/perfilmartin.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content={$locale === 'es' ? 'Martin Farel — UI/UX Designer y Fullstack Developer' : 'Martin Farel — UI/UX Designer & Fullstack Developer'} />
-  <meta property="og:url" content="https://martinfarel.dev" />
+  <meta property="og:url" content="https://martinprogramador.netlify.app" />
   <meta property="og:site_name" content="Martin Farel" />
   <meta property="og:locale" content={$locale === 'es' ? 'es_ES' : 'en_US'} />
   <meta property="og:locale:alternate" content={$locale === 'es' ? 'en_US' : 'es_ES'} />
@@ -34,7 +34,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={$locale === 'es' ? 'Martin Farel — UI/UX Designer y Fullstack Developer' : 'Martin Farel — UI/UX Designer & Fullstack Developer'} />
   <meta name="twitter:description" content={$locale === 'es' ? 'Portfolio de Martin Farel - UI/UX Designer y Fullstack Developer especializado en experiencias digitales modernas con IA.' : 'Portfolio of Martin Farel - UI/UX Designer and Fullstack Developer specialized in modern digital experiences with AI.'} />
-  <meta name="twitter:image" content="https://martinfarel.dev/assets/perfilmartin.jpg" />
+  <meta name="twitter:image" content="https://martinprogramador.netlify.app/assets/perfilmartin.jpg" />
   <meta name="twitter:image:alt" content={$locale === 'es' ? 'Martin Farel — UI/UX Designer y Fullstack Developer' : 'Martin Farel — UI/UX Designer & Fullstack Developer'} />
 </svelte:head>
 
