@@ -36,6 +36,31 @@
   <meta name="twitter:description" content={$locale === 'es' ? 'Portfolio de Martin Farel - UI/UX Designer y Fullstack Developer especializado en experiencias digitales modernas con IA.' : 'Portfolio of Martin Farel - UI/UX Designer and Fullstack Developer specialized in modern digital experiences with AI.'} />
   <meta name="twitter:image" content="https://martinprogramador.netlify.app/assets/perfilmartin.jpg" />
   <meta name="twitter:image:alt" content={$locale === 'es' ? 'Martin Farel — UI/UX Designer y Fullstack Developer' : 'Martin Farel — UI/UX Designer & Fullstack Developer'} />
+  
+  <!-- Profile -->
+  <meta property="profile:first_name" content="Martin" />
+  <meta property="profile:last_name" content="Farel" />
+  
+  <!-- Canonical & Author -->
+  <link rel="canonical" href="https://martinprogramador.netlify.app" />
+  <meta name="author" content="Martin Farel" />
+  <meta name="theme-color" content="#0d0f1a" />
+  
+  <!-- JSON-LD Schema (Person) -->
+  {@html `<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Martin Farel",
+    "jobTitle": $locale === 'es' ? 'UI/UX Designer y Fullstack Developer' : 'UI/UX Designer & Fullstack Developer',
+    "url": "https://martinprogramador.netlify.app",
+    "image": "https://martinprogramador.netlify.app/assets/perfilmartin.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/martin-farel-603a1615b",
+      "https://github.com/Martin444"
+    ],
+    "email": "mfarelback@gmail.com",
+    "description": $locale === 'es' ? 'UI/UX Designer y Fullstack Developer especializado en experiencias digitales modernas con IA.' : 'UI/UX Designer & Fullstack Developer specialized in modern digital experiences with AI.'
+  })}</script>`}
 </svelte:head>
 
 <SpaceBackground />
